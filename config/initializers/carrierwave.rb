@@ -7,7 +7,9 @@ else
   CarrierWave.configure do |config|
     config.storage    = :aws
     config.aws_bucket = JSON.parse(ENV['VCAP_SERVICES'])['aws-s3-bucket'][0]['credentials']['bucket_name']
-    config.aws_acl    = 'public-read'
+    config.aws_acl    = 'private'
+
+    config.aws_authenticated_url_expiration = 60
 
     # Set custom options such as cache control to leverage browser caching.
     # You can use either a static Hash or a Proc.
