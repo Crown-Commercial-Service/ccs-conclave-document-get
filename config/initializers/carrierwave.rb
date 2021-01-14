@@ -7,7 +7,7 @@ else
   CarrierWave.configure do |config|
     config.storage    = :aws
     config.aws_bucket = JSON.parse(ENV['VCAP_SERVICES'])['aws-s3-bucket'][0]['credentials']['bucket_name']
-    config.aws_acl    = 'authenticated-read'
+    config.aws_acl    = 'public-read'
 
     config.aws_authenticated_url_expiration = 60
 
