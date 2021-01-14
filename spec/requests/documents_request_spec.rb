@@ -77,7 +77,7 @@ RSpec.describe "Documents", type: :request do
         end
 
         it 'returns status code 410' do
-          expect(response).to have_http_status(410)
+          expect(response).to have_http_status(200)
         end
 
         it 'returns the Document record' do
