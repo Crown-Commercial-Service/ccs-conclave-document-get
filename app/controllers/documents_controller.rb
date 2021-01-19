@@ -9,7 +9,7 @@ class DocumentsController < ApplicationController
 
     if document.nil?
       render status: :not_found
-    elsif document && !document.document_file.file && %w[safe unsafe].any?{|state| state.include?(document.state.to_s) }
+    elsif document && !document.document_file.file && document.state == 'safe'
       render json: document.to_json, status: :gone
     else
       render json: document.to_json, status: :ok
