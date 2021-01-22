@@ -25,7 +25,7 @@ install:
   - bundle install --jobs=3 --retry=3
 before_script:
   - psql -c 'create database ccs_conclave_document_get_test;' -U postgres
-  - bundle exec rails db:migrate
+  - bundle exec rake db:schema:load 
 before_deploy:
   - echo "install cloudfoundry cli"
   - wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
