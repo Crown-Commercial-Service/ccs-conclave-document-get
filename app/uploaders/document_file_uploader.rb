@@ -31,10 +31,4 @@ class DocumentFileUploader < CarrierWave::Uploader::Base
       url: path
     }
   end
-
-  def as_json(options = nil)
-    {
-      url: path
-    }
-  end
 end
