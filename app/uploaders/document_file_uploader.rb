@@ -26,7 +26,7 @@ class DocumentFileUploader < CarrierWave::Uploader::Base
     %w[pdf csv docx xlsx]
   end
 
-  def as_json(options = nil)
+  def as_json(_options = nil)
     {
       url: path
     }

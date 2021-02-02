@@ -47,7 +47,9 @@ RSpec.describe 'Documents', type: :request do
       end
 
       context 'when xslx file' do
-        let(:document_file) { fixture_file_upload('test_xlsx.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') }
+        let(:document_file) do
+          fixture_file_upload('test_xlsx.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        end
         before do
           get "/documents/#{document.id}", headers: headers
         end
