@@ -1,13 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe "Documents", type: :request do
+RSpec.describe 'Documents', type: :request do
   let(:client) { create(:client, source_app: 'myapp') }
   let(:document) { create(:document) }
 
-  let(:headers) {{
-    "ACCEPT" => "application/json",
-    "HTTP_AUTHORIZATION" => ActionController::HttpAuthentication::Basic.encode_credentials(client.source_app, client.api_key)
-  }}
+  let(:headers) do
+    {
+      'ACCEPT' => 'application/json',
+      'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Basic.encode_credentials(client.source_app,
+                                                                                             client.api_key)
+    }
+  end
 
   describe 'get' do
     context 'when success' do
@@ -44,7 +47,9 @@ RSpec.describe "Documents", type: :request do
       end
 
       context 'when xslx file' do
-        let(:document_file) { fixture_file_upload('test_xlsx.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') }
+        let(:document_file) do
+          fixture_file_upload('test_xlsx.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        end
         before do
           get "/documents/#{document.id}", headers: headers
         end
@@ -74,7 +79,7 @@ RSpec.describe "Documents", type: :request do
       end
     end
 
-    context 'when the document has not been processed because something might have gone wrong during the check process' do
+    context 'when the document has not been processed because something may have gone wrong during the check process' do
       let(:document) { create(:document, document_file: nil, state: 'unprocessed') }
 
       before do
@@ -91,10 +96,12 @@ RSpec.describe "Documents", type: :request do
     end
 
     context 'when authentication fails' do
-      let(:headers) {{
-        "ACCEPT" => "application/json",
-        "HTTP_AUTHORIZATION" => ActionController::HttpAuthentication::Basic.encode_credentials('invalid', 'invalid')
-      }}
+      let(:headers) do
+        {
+          'ACCEPT' => 'application/json',
+          'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Basic.encode_credentials('invalid', 'invalid')
+        }
+      end
 
       it 'returns status code 401' do
         get "/documents/#{document.id}", headers: headers
@@ -154,7 +161,7 @@ RSpec.describe "Documents", type: :request do
 
     context 'when Document cannot be found' do
       it 'returns status code 404' do
-        get "/documents/invalid", headers: headers
+        get '/documents/invalid', headers: headers
         expect(response).to have_http_status(404)
       end
     end

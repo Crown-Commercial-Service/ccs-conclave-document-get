@@ -31,3 +31,6 @@
 
 # Ignore local uploads
 public/uploads/*
+
+# Ignore test artifacts
+coverage
