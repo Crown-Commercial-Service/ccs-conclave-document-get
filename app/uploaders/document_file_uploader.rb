@@ -25,4 +25,10 @@ class DocumentFileUploader < CarrierWave::Uploader::Base
   def extension_whitelist
     %w[pdf csv docx xlsx]
   end
+
+  def as_json(options = nil)
+    {
+      url: path
+    }
+  end
 end
