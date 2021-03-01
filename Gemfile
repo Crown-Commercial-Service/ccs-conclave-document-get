@@ -26,7 +26,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'rack-cors'
 
 # File uploader
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 
 # for S3 storage of files
 gem 'carrierwave-aws', '~> 1.5.0'
