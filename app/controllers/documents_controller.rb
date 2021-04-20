@@ -1,8 +1,4 @@
 class DocumentsController < ApplicationController
-  include ActionController::HttpAuthentication::Basic::ControllerMethods
-  include ActionController::HttpAuthentication::Token::ControllerMethods
-  before_action :authenticate
-
   def show
     document = Document.find_by(id: document_params[:id])
 
@@ -19,12 +15,5 @@ class DocumentsController < ApplicationController
 
   def document_params
     params.permit(:id)
-  end
-
-  def authenticate
-    authenticate_or_request_with_http_basic do |source_app, api_key|
-      @client = Client.find_by(source_app: source_app)
-      @client && @client.api_key == api_key
-    end
   end
 end
