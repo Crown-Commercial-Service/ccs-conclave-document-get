@@ -93,4 +93,24 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
+  RSpec::Matchers.define :have_the_same_attributes_as do |expected_document|
+    match do |response_body|
+      parsed_body = JSON.parse(response_body)
+ 
+      parsed_body["id"] == expected_document[:id]
+      parsed_body["sourceApp"] == expected_document[:source_app]
+      parsed_body["state"] == expected_document[:state]
+      parsed_body["clamavMessage"] == expected_document[:clamav_message]
+    end
+    failure_message do |response_body|
+      parsed_body = JSON.parse(response_body)
+
+      "expected that response would have all the same attributes as document. Attributes:\n
+      ACTUAL | EXPECTED\n
+      #{parsed_body["id"]} | #{expected_document[:id]}\n
+      #{parsed_body["sourceApp"]} | #{expected_document[:source_app]}\n
+      #{parsed_body["state"]} | #{expected_document[:state]}\n
+      #{parsed_body["clamavMessage"]} | #{expected_document[:clamav_message]}\n"
+    end
+  end
 end
