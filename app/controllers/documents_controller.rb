@@ -5,8 +5,10 @@ class DocumentsController < ApplicationController
     if document.nil?
       render status: :not_found
     elsif document && !document.document_file.file && document.state == 'safe'
+      document = camelize_keys(document)
       render json: camelize_keys(document), status: :gone
     else
+      document = camelize_keys(document)
       render json: camelize_keys(document), status: :ok
     end
   end
@@ -18,6 +20,6 @@ class DocumentsController < ApplicationController
   end
 
   def camelize_keys(document)
-    document.as_json(include: { document_file: :url }).deep_transform_keys! { |key| key.camelize(:lower) }
+    document.as_json.transform_keys! { |key| key.camelize(:lower) }
   end
 end
