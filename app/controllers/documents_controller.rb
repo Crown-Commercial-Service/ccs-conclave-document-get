@@ -20,6 +20,6 @@ class DocumentsController < ApplicationController
   end
 
   def camelize_keys(document)
-    document.as_json(include: { document_file: :url }).deep_transform_keys! { |key| key.camelize(:lower) }
+    document.as_json.transform_keys! { |key| key.camelize(:lower) }
   end
 end
