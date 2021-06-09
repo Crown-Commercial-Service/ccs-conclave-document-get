@@ -27,7 +27,6 @@ RSpec.describe 'Documents', type: :request do
         end
 
         it 'returns the Document record' do
-          # expect(response.body).to eq document.to_json
           expect(response.body).to have_the_same_attributes_as(document)
         end
       end
