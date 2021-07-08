@@ -26,7 +26,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'rack-cors'
 
 # File uploader
-gem 'carrierwave', '~> 2.1', '>= 2.1.1'
+gem 'carrierwave', '~> 2.2', '>= 2.2.1'
 
 # for S3 storage of files
 gem 'carrierwave-aws', '~> 1.5.0'
@@ -66,7 +66,7 @@ group :test do
   gem 'shoulda-matchers', '~> 4.4.1'
   gem 'faker'
   gem 'database_cleaner'
-  gem 'webmock'
+  gem 'webmock', '>= 3.10.0'
   gem 'simplecov', '0.20', require: false
   gem 'climate_control'
 end
