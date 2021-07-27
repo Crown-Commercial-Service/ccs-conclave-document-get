@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: ccs-conclave-document-get
+  - name: CF_SPACE-ccs-conclave-document-get
     services:
       - ccs-conclave-document-upload-pg-service
       - ccs-conclave-document-s3-service
