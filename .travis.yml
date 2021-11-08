@@ -16,6 +16,7 @@ env:
   global:
   - CF_ORG=ccs-document-upload
   - CLIENT_ID=test123
+  - SECURITY_SERVICE_URL=http://www.test.com
   - secure: "eq7HH6jX7SpmCT1S5I14JbbWpDTpSy5kPkTibK9LRVORDrnp3kbenGa/Qbfcl3jb4HhCPqHCgdn5aMvIwsipLbf6lPgIBUa0IabgSA0Xs8yXQDNQE0KPS2M6izpBvFO9lYcXRRZDUgGmaIo9ZzfsRU/Rllu0hmcjrkWCU2NEj8n3iXuApRTLr9yo8pomIbxu+nIxI60yCPa1pBnGLSsszhvYx+GaH3aK+ZtaZynB6CJatpgihrrWKDsxJN5MYE7N0p5GP3cH/fD9oXdtZIWnemItqynTQdAd62vT5F3ez0K0PWn9lVAj8vMUBjqZMtSaZRUOnvoMptBpuMRL27X51uQo2gtxgS5yGbi7R2TKP4ZagPMXx643CabK+fl30gbf2XunfMM0MILtGgKi40sffyhcxUWkL8x/9Cse5+33sOMs2ZZi5iVWbiRI7v4gcn69G9ZZp10C+TO9FihFQ3pjNf1uEI+nMJvAhuLTmBV22oyQ4KJVYvK8Gffswhco/7IZ2IRWMph6DBBJLZJW/BQfpLZsUgmv8Ao/fOtB1f1azkkokDf/4cCn1TDuTknr+E9MYeUrAvrVQBHu41kvDZEsf1M5dBS9Jzj3nHu+5ppiRn5iOeeTjO6gNJr0cwhGxyKda+6IzBzi+c2T62q00kfy9ruECCJFwaHoixQzgsHq0UA="
 before_install:
   - gem install bundler -v 2.1.4
