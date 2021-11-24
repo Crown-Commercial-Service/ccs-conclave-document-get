@@ -37,6 +37,9 @@ gem 'i18n-tasks', '~> 0.9.34'
 # Exception tracking
 gem 'rollbar', '~> 3.1.1'
 
+# Provides support for CORS.
+gem 'rack-cors', '~> 1.1', '>= 1.1.1'
+
 # Environment variables management
 gem 'vault', '~> 0.15.0'
 
