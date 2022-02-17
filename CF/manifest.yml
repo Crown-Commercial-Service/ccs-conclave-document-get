@@ -7,4 +7,4 @@ applications:
       - API_ROLLBAR
     memory: MEMORY_LIMIT
     buildpacks:
-      - https://github.com/cloudfoundry/ruby-buildpack.git
+      - https://github.com/cloudfoundry/ruby-buildpack.git#v1.8.48
