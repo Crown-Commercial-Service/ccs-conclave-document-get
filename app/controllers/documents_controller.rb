@@ -1,9 +1,7 @@
 class DocumentsController < ApplicationController
-  include Authorize::Token
   include Authorize::ClientService
   rescue_from Authorize::ClientService::ApiError, with: :return_error_code
-  before_action :validate_api_key
-  before_action :validate_client
+  before_action :validate_client_or_api_key
 
   def show
     document = Document.find_by(id: document_params[:id])
