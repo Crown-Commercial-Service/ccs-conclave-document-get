@@ -34,5 +34,6 @@ public/uploads/*
 
 # Ignore test artifacts
 coverage
+
 # Ignore application configuration
 /config/application.yml
