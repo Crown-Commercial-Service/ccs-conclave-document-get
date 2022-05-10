@@ -4,12 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.4', '>= 6.0.4.6'
+
+gem 'rails', '~> 6.0.4', '>= 6.0.4.8'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 4.3', '>= 4.3.11'
+gem 'puma', '~> 4.3', '>= 4.3.12'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -20,6 +21,9 @@ gem 'puma', '~> 4.3', '>= 4.3.11'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# aws ssm
+gem 'aws-sdk-ssm'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -27,13 +31,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'rack-cors'
 
 # File uploader
-gem 'carrierwave', '~> 2.2', '>= 2.2.1'
+gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 
 # for S3 storage of files
 gem 'carrierwave-aws', '~> 1.5.0'
 
 # Helps you manage translations
-gem 'i18n-tasks', '~> 0.9.35'
+gem 'i18n-tasks', '~> 0.9.37'
 
 # Exception tracking
 gem 'rollbar', '~> 3.1.1'
