@@ -6,11 +6,11 @@
 # Read more: https://github.com/cyu/rack-cors
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors, debug: true, logger: (-> { Rails.logger }) do
-  allow do
-    origins ENV.fetch('CORS_ORIGINS').split(',').map(&:strip)
+  # allow do
+  #   origins ENV.fetch('CORS_ORIGINS').split(',').map(&:strip)
 
-    resource '*',
-             headers: :any,
-             methods: %i[get post put patch delete options head]
-  end
+  #   resource '*',
+  #            headers: :any,
+  #            methods: %i[get post put patch delete options head]
+  # end
 end
