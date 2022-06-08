@@ -2,17 +2,33 @@ require 'rails_helper'
 
 RSpec.describe 'Documents', type: :request do
   let(:client) { create(:client, source_app: 'myapp') }
+  let(:clientid) { ENV['CLIENT_ID'] }
+  let(:jwt_token) { JWT.encode({ aud: ENV['CLIENT_ID'] }, 'test') }
   let(:document) { create(:document) }
 
   let(:headers) do
     {
       'ACCEPT' => 'application/json',
-      'x-api-key' => ActionController::HttpAuthentication::Basic.encode_credentials(client.source_app,
-                                                                                    client.api_key)
+      'x-api-key' => client.api_key,
+      'Authorization' => "Bearer #{jwt_token}"
     }
   end
 
   describe 'get' do
+    before do
+      stub_request(:post, "http://www.test.com/security/tokens/validation?client-id=#{clientid}")
+        .with(
+          headers: {
+            'Accept' => '*/*',
+            'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            'Authorization' => "Bearer #{jwt_token}",
+            'Content-Type' => 'application/x-www-form-urlencoded',
+            'User-Agent' => 'Ruby'
+          }
+        )
+        .to_return(status: 200, body: 'true', headers: {})
+    end
+
     context 'when success' do
       let(:document) { create(:document, document_file: document_file) }
 
@@ -27,7 +43,6 @@ RSpec.describe 'Documents', type: :request do
         end
 
         it 'returns the Document record' do
-          # expect(response.body).to eq document.to_json
           expect(response.body).to have_the_same_attributes_as(document)
         end
       end
