@@ -14,7 +14,7 @@ class ApplicationController < ActionController::API
   end
 
   def api_key_or_access_token_auth
-    unless request.headers['Authorization'].present? && request.headers['Authorization'].to_s.downcase.start_with?('bearer')
+    unless request.headers['Authorization'].present? && request.headers['Authorization'].to_s.downcase.start_with?('be')
       return authenticate
     end
 
