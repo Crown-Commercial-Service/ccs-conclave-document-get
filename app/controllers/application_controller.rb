@@ -14,7 +14,7 @@ class ApplicationController < ActionController::API
   end
 
   def api_key_or_access_token_auth
-    return authenticate unless request.headers['Authorization'].present?
+    return authenticate if request.headers['Authorization'].present?
 
     validate_client_id
     validate_user_access_token
