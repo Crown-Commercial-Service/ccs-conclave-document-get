@@ -47,7 +47,7 @@ gem 'vault', '~> 0.15.0'
 
 # static code analyzer
 gem 'rubocop', '>= 1.7.0', require: false
-gem 'rubocop-rails', '>= 2.15.2', require: false
+gem 'rubocop-rails', '>= 2.17.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
