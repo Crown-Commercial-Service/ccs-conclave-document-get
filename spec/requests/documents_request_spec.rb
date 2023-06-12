@@ -49,7 +49,8 @@ RSpec.describe 'Documents', type: :request do
 
       context 'when xslx file' do
         let(:document_file) do
-          Rack::Test::UploadedFile.new('spec/fixtures/test_xlsx.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+          Rack::Test::UploadedFile.new('spec/fixtures/test_xlsx.xlsx',
+                                       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
         end
         before do
           get "/documents/#{document.id}", headers: headers
