@@ -17,7 +17,7 @@ RSpec.describe 'Documents', type: :request do
       let(:document) { create(:document, document_file: document_file) }
 
       context 'when pdf file' do
-        let(:document_file) { fixture_file_upload 'spec/fixtures/test_pdf.pdf', 'application/pdf' }
+        let(:document_file) { Rack::Test::UploadedFile.new('spec/fixtures/test_pdf.pdf', 'application/pdf') }
         before do
           get "/documents/#{document.id}", headers: headers
         end
@@ -33,7 +33,7 @@ RSpec.describe 'Documents', type: :request do
       end
 
       context 'when csv file' do
-        let(:document_file) { fixture_file_upload('test_csv.csv', 'text/csv') }
+        let(:document_file) { Rack::Test::UploadedFile.new('spec/fixtures/test_csv.csv', 'text/csv') }
         before do
           get "/documents/#{document.id}", headers: headers
         end
@@ -49,7 +49,7 @@ RSpec.describe 'Documents', type: :request do
 
       context 'when xslx file' do
         let(:document_file) do
-          fixture_file_upload('test_xlsx.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+          Rack::Test::UploadedFile.new('spec/fixtures/test_xlsx.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
         end
         before do
           get "/documents/#{document.id}", headers: headers
@@ -65,7 +65,7 @@ RSpec.describe 'Documents', type: :request do
       end
 
       context 'when docx file' do
-        let(:document_file) { fixture_file_upload('test_docx.docx', 'text/docx') }
+        let(:document_file) { Rack::Test::UploadedFile.new('spec/fixtures/test_docx.docx', 'text/docx') }
         before do
           get "/documents/#{document.id}", headers: headers
         end
