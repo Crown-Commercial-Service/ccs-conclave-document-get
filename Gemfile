@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.3'
+ruby '3.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
@@ -28,7 +28,7 @@ gem 'aws-sdk-ssm'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem 'rack-cors', '~> 1.1', '>= 1.1.1'
+gem 'rack-cors'
 
 # File uploader
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
