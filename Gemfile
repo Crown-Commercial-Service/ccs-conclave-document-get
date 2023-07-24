@@ -34,7 +34,7 @@ gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 
 # for S3 storage of files
-gem 'carrierwave-aws', '~> 1.5.0'
+gem 'carrierwave-aws', '~> 1.6.0'
 
 # Helps you manage translations
 gem 'i18n-tasks', '~> 0.9.37'
