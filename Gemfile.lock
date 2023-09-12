@@ -313,7 +313,7 @@ DEPENDENCIES
   i18n-tasks (~> 0.9.37)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
-  puma (~> 5.6)
+  puma (~> 5.6, >= 5.6.7)
   rack-cors
   rails (~> 6.1.7, >= 6.1.7.3)
   rollbar (~> 3.1.1)
