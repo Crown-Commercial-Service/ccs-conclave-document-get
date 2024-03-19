@@ -49,6 +49,9 @@ gem 'vault', '~> 0.15.0'
 gem 'rubocop', '>= 1.7.0', require: false
 gem 'rubocop-rails', '>= 2.20.0', require: false
 
+#JSON web token functionality
+gem 'jwt'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
