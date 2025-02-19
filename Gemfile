@@ -5,7 +5,7 @@ ruby '3.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
-gem 'rails', '~> 6.1.7', '>= 6.1.7.5'
+gem 'rails', '~> 7.0.0'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -47,7 +47,7 @@ gem 'vault', '~> 0.15.0'
 
 # static code analyzer
 gem 'rubocop', '>= 1.7.0', require: false
-gem 'rubocop-rails', '>= 2.20.0', require: false
+gem 'rubocop-rails', '>= 2.30.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
