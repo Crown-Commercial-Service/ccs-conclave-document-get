@@ -5,7 +5,7 @@ ruby '3.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
-gem 'rails', '~> 6.1.7', '>= 6.1.7.5'
+gem 'rails', '~> 7.0.0'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -37,7 +37,7 @@ gem 'carrierwave', '~> 2.2', '>= 2.2.3'
 gem 'carrierwave-aws', '~> 1.6.0'
 
 # Helps you manage translations
-gem 'i18n-tasks', '~> 1.0.0'
+gem 'i18n-tasks', '~> 1.0.14'
 
 # Exception tracking
 gem 'rollbar', '~> 3.1.1'
