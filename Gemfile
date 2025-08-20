@@ -5,7 +5,7 @@ ruby '3.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
-gem 'rails', '~> 6.1.7', '>= 6.1.7.5'
+gem 'rails', '~> 7.1.5', '>= 7.1.5.2'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -70,7 +70,7 @@ group :test do
   gem 'factory_bot_rails', '~> 6.2.0'
   gem 'shoulda-matchers', '~> 4.5.0'
   gem 'faker'
-  gem 'database_cleaner'
+  gem 'database_cleaner', '>= 2.1.0'
   gem 'webmock', '>= 3.10.0'
   gem 'simplecov', '0.20', require: false
   gem 'climate_control'
