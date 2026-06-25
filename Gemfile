@@ -54,8 +54,6 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Rspec
   gem 'rspec-rails', '>= 8.0.0'
-  # Environment variable manager for local and testing configuration
-  gem 'dotenv-rails'
 end
 
 group :development do
